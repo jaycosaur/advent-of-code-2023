@@ -1,4 +1,4 @@
-with open("sample_one.txt") as f:
+with open("sample_two.txt") as f:
     lines = f.readlines()
 
 word_map = {
