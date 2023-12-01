@@ -17,20 +17,18 @@ word_map = {
 def scan_line_for_matches(line: str, lookup_dict: dict):
     line_clone = line
     first_number = None
-    while first_number is None:
+    while len(line_clone) > 0:
         first_char = line_clone[0]
 
         is_number = first_char.isnumeric()
 
         if is_number:
-            first_number = first_char
-            continue
+            return first_char
 
         for k, v in lookup_dict.items():
             match = line_clone.find(k, 0)
             if match == 0:
-                first_number = v
-                break
+                return v
 
         line_clone = line_clone[1:]
 
